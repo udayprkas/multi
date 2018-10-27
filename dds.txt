@@ -1,0 +1,26 @@
+import java.io.*;
+public class Question{
+	public static void main(String[] args){
+		File f=new File("C:/Users/Parmjot Singh chahal/Desktop/git/gitURL.txt");
+		try{
+		FileInputStream fin=new FileInputStream(f);
+		if(f.exists()){
+				System.out.println("File exist and path -> "+f.getPath());
+			}
+			else{
+				System.out.println("File don not exist");
+			}
+			System.out.println("");
+			int i;
+			i=fin.read();
+			while(i!=-1){
+				System.out.print((char)i);
+				i=fin.read();
+			}
+			fin.close();
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
+	}
+}
